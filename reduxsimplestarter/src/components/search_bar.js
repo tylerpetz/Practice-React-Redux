@@ -1,13 +1,6 @@
 // Import react and pull off the properity "Component" as a var called Component
 import React, { Component } from 'react';
 
-// functional component, a component that is a function aka "dumb component"
-// start off with functional components, refactor as Classes when the need arises
-
-/*const SearchBar = () => {
-	return <input />;
-};*/
-
 // ES6 Class
 // define a new class called "SearchBar"
 // give it all the functionality of React.Component
