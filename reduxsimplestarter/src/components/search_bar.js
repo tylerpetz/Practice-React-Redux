@@ -33,30 +33,32 @@ class SearchBar extends Component {
 		this.state = { term: '' };
 	}
 
+	/*dis is how we work with state outside of main constructor, using setState 
+	this.state.term = event.target.value -- NEVER DO THIS, BAD!!!! BAD!
+	refactored to inline onChange
+	onInputChange(event) {
+		this.setState({ term: event.target.value });
+	}
+
+	// refactored smaller
+	render() {
+		return <input onChange={event => console.log(event.target.value)} />;
+	}*/
+
 	render() {
 		// when we tell the input that it's value is provided by by this.state.term
 		// we turn it into a "controlled component" or "controlled form element"
 		// it has it's value set by state, so the value only changes if the state changes
 		return (
-		<div>
+		<div className="search-bar">
 			<input 
 				value={this.state.term}
 				onChange={event => this.setState({ term: event.target.value })} />
 		</div>
 		);
 	}
-
-	// this is how we work with state outside of main constructor, using setState
-	// this.state.term = event.target.value -- NEVER DO THIS, BAD!!!! BAD!
-	// refactored to inline onChange
-/*	onInputChange(event) {
-		this.setState({ term: event.target.value });
-	}*/
-
-	// refactored smaller
-	/*render() {
-		return <input onChange={event => console.log(event.target.value)} />;
-	}*/
 };
 
 export default SearchBar;
+
+	
